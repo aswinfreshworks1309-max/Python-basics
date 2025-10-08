@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .product { border: 1px solid #ccc; padding: 10px; margin: 10px; width: 200px; display: inline-block; }
+        .cart { border: 2px solid #333; padding: 10px; margin-top: 20px; width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Grocery Store</h1>
+
+    <div class="product">
+        <h3>Apple</h3>
+        <p>Price: $1</p>
+        <button onclick="addToCart('Apple', 1)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3>Banana</h3>
+        <p>Price: $0.5</p>
+        <button onclick="addToCart('Banana', 0.5)">Add to Cart</button>
+    </div>
+
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total:</strong> $<span id="total">0</span></p>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            total += price;
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalEl = document.getElementById('total');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+            totalEl.textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+length=input("Enter input")
+print(length)
+breath=input("enter breath")
+print(breath)
+l=int(length)
+b=int(breath)
+area=(l*b)
+print("area")
