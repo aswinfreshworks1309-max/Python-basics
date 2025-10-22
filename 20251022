@@ -1,0 +1,76 @@
+# 1. Write a function to split a given string on hyphens (-) and display each substring on a new line.
+# You must:
+
+
+def new_sentence(a):
+    sentence = a.split('-')
+    for i in sentence:
+        print(i)
+    
+new_sentence("Emma-is-a-data-scientist")
+
+
+
+# 2. Write a Python program to reverse a given string in two ways:
+ 
+#without slicing
+
+def reverse (a):
+    new = ""
+    for i in a:
+        new = i+new
+    print(new)
+reverse("python")
+
+# with slicing
+
+def reverse(a):
+    new = a[::-1]
+    print(new)
+
+reverse("Python")
+
+
+# 3. Write a Python program to count the number of consonants in a given string.
+ 
+
+def find_consonants(c):
+    count = 0
+    for j in c:
+        if j != "e" and j != "a" and j != "i" and j != "o" and j != "u" and j != " " :
+            count = count+1
+    print("the total number of consonants is :",count)
+            
+find_consonants("Hello World")
+
+
+
+# 4.  Write a Python program to remove all spaces from a given string.
+ 
+
+
+def remove_space(a):
+    new = ""
+    for i in a:
+        if i != " ":
+            new = new+i
+    print(new)
+        
+remove_space(" Python is awesome")
+
+
+# 5. Write a Python program that asks the user to enter a password and checks if it is strong. A password is considered strong if:
+
+
+def password_check():
+    special_char = "@#$%^&*"
+    password = input("Enter the Password :")
+    if len(password)>=8:
+        if any(char in special_char for char in password):
+            return "Your password is strong"
+        else:
+            return "Your password is not strong"
+    else:
+        return "Password must be contain atleast 8 characters"
+print(password_check())
+        
