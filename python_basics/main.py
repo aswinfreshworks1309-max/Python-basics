@@ -23,4 +23,5 @@ print(type(v))
 
 
 
-print("⭐")
+print("⭐")   
+print("⭐")  
